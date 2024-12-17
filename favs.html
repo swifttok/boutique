@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftTok 🚀 - Favoris 🔖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Couleur de fond noire */
+            color: #ffffff; /* Texte en blanc */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            width: 100%;
+        }
+
+        header h1 {
+            color: #fc3253; /* Couleur spécifique TikTok */
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 15px;
+            padding: 15px 30px;
+            background-color: #fc3253; /* Couleur spécifique TikTok */
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(252, 50, 83, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #f64f59; /* Ton plus foncé de TikTok */
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(252, 50, 83, 0.5);
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .feature {
+            width: 300px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(252, 50, 83, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(252, 50, 83, 0.5);
+        }
+
+        .feature h3 {
+            color: #fc3253;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            color: #cccccc;
+        }
+
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff69b4, #000000, #0066ff, #ff69b4);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .catalogue {
+            padding: 20px;
+        }
+
+        .product {
+            background-color: #1e1e1e;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(252, 50, 83, 0.3);
+        }
+
+        .product h3 {
+            color: #fc3253;
+            margin: 0 0 10px;
+        }
+
+        .product p {
+            color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-animation"></div>
+
+    <header>
+        <h1>SwiftTok 🚀 - Les Favoris 🔖</h1>
+        <p>SwiftTok : La clé du succès instantané sur TikTok !</p>
+    </header>
+    
+    <h2>⚠️ Notez que les quantités peuvent être inprécises de quelques unités près ⚠️</h2>
+    <h2>Sélectionnez la quantité de favoris que vous souhaitez acheter :</h2>
+
+    <div class="features">
+        <div class="feature">
+            <h3>5000 Favoris</h3>
+            <p>Prix : 0,50€</p>
+            <p>5000 / 5k de Favoris sur TikTok (1 Vidéo)</p>
+            <a href="https://discord.gg/43fHNDUk8U" class="btn">Commander 🛒</a>
+        </div>
+        <div class="feature">
+            <h3>7500 Favoris</h3>
+            <p>Prix : 1,50€</p>
+            <p>7500 / 7,5k de Favoris sur TikTok (1 Vidéo)</p>
+            <a href="https://discord.gg/43fHNDUk8U" class="btn">Commander 🛒</a>
+        </div>
+        <div class="feature">
+            <h3>10 000 Favoris</h3>
+            <p>Prix : 2€</p>
+            <p>10 000 / 10k de Favoris sur TikTok (1 Vidéo)</p>
+            <a href="https://discord.gg/43fHNDUk8U" class="btn">Commander 🛒</a>
+        </div>
+        <div class="feature">
+            <h3>35 500 Favoris</h3>
+            <p>Prix : 4,50€</p>
+            <p>35 500 / 35,5k de Favoris sur TikTok (1 Vidéo)</p>
+            <a href="https://discord.gg/43fHNDUk8U" class="btn">Commander 🛒</a>
+        </div>
+        <div class="feature">
+            <h3>50 000 Favoris</h3>
+            <p>Prix : 6€</p>
+            <p>50 000 / 50k de Favoris sur TikTok (1 Vidéo)</p>
+            <a href="https://discord.gg/43fHNDUk8U" class="btn">Commander 🛒</a>
+        </div>
+        <div class="feature">
+            <h3>100 000 Favoris</h3>
+            <p>Prix : 9€</p>
+            <p>100 000 / 100k de Favoris sur TikTok (1 Vidéo)</p>
+            <a href="https://discord.gg/43fHNDUk8U" class="btn">Commander 🛒</a>
+        </div>
+        <div class="feature">
+            <h3>1 000 000 Favoris</h3>
+            <p>Prix : 9€</p>
+            <p>1 000 000 / 1 Million de Favoris sur TikTok (1 Vidéo)</p>
+            <a href="https://discord.gg/43fHNDUk8U" class="btn">Commander 🛒</a>
+        </div>
+    </div>
+    
+    <a href="catalogue.html" class="btn">Retour au Catalogue 📦</a>
+    <a href="swift.html" class="btn">Retour à l'Accueil 🏠</a>
+
+    <footer>
+        <p>&copy; 2024 SwiftTok - All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftTok 🚀 - Website 🌐</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Couleur de fond noire */
+            color: #ffffff; /* Texte en blanc */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            width: 100%;
+        }
+
+        header h1 {
+            color: #fc3253; /* Couleur spécifique TikTok */
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 15px;
+            padding: 15px 30px;
+            background-color: #fc3253; /* Couleur spécifique TikTok */
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(252, 50, 83, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #f64f59; /* Ton plus foncé de TikTok */
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(252, 50, 83, 0.5);
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .feature {
+            width: 300px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(252, 50, 83, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(252, 50, 83, 0.5);
+        }
+
+        .feature h3 {
+            color: #fc3253;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            color: #cccccc;
+        }
+
+        /* Fond animé avec changement de couleur permanent */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff69b4, #000000, #0066ff, #ff69b4);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .demo-form {
+            background-color: #1e1e1e;
+            padding: 30px;
+            margin-top: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(252, 50, 83, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .demo-form select, .demo-form button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            box-shadow: 0 5px 10px rgba(252, 50, 83, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .demo-form select:hover, .demo-form button:hover {
+            background-color: #f64f59;
+            box-shadow: 0 10px 15px rgba(252, 50, 83, 0.5);
+        }
+
+        .demo-form h2 {
+            color: #fc3253;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="background-animation"></div>
+
+    <header>
+        <h1>SwiftTok 🚀</h1>
+        <p>SwiftTok : La clé du succès instantané sur TikTok !</p>
+    </header>
+
+    <div class="container">
+        <a href="catalogue.html" class="btn" id="demoBtn">Notre Catalogue 📦</a>
+        <a href="https://discord.gg/43fHNDUk8U" class="btn">Commander 🛒</a>
+        <a href="https://discord.gg/43fHNDUk8U" class="btn">Essai Gratuit 💲</a>
+        <a href="https://discord.gg/43fHNDUk8U" class="btn">Notre Discord 🌐</a> 
+    </div>
+
+    <div id="demoSection" class="demo-form" style="display: none;">
+        <h2>Choose your product and options</h2>
+        <form id="demoForm">
+            <label for="product">Choisissez votre produit :</label>
+            <select id="product" onchange="updateOptions()">
+                <option value="5">Applications / Software Python - 5€</option>
+                <option value="7">Applications / Software Electron - 7€</option>
+                <option value="10">Website - 10€</option>
+                <option value="10">Discord Bot Python - 10€</option>
+                <option value="25">Discord Bot Node JS - 25€</option>
+                <option value="2.50">Classic Tool Python - 2.50€</option>
+                <option value="5">Interfaces Tool Python - 5€</option>
+            </select>
+
+            <!-- Options supprimées -->
+            <label for="option">Choisissez les options :</label>
+            <select id="option"></select> <!-- Suppression des options -->
+
+            <button type="button" onclick="calculatePrice()">Calculate Price</button>
+        </form>
+
+        <p id="totalPrice" style="color: #ff69b4; text-align: center; font-size: 24px;"></p>
+    </div>
+
+    <div class="features" id="features">
+        <div class="feature">
+            <h3>+5 Services 🖥️</h3>
+            <p>Nous offrons au total plus de 5 services différents sur le réseau social TikTok.</p>
+        </div>
+        <div class="feature">
+            <h3>Rapide ⚡</h3>
+            <p>Livraison rapide (quelques minutes) avec parfois un bonus 🌟</p>
+        </div>
+        <div class="feature">
+            <h3>Fiabilité & Sécurité 🛡️</h3>
+            <p>Nous proposons des services fiables , rapides et efficaces. Vous êtes inquiet ? Rejoignez notre discord ! 💥</p>
+        </div>
+        <div class="feature">
+            <h3>Partie Gratuite 💲</h3>
+            <p>Des "échantillons" sur plusieurs services sont disponibles ! Foncez ! 💲</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SwiftTok - All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to make the background follow the mouse
+        const background = document.querySelector('.background-animation');
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth * 100;
+            const y = e.clientY / window.innerHeight * 100;
+            background.style.backgroundPosition = `${x}% ${y}%`;
+        });
+
+        // Show the demo section when clicking the Demo button
+        document.getElementById("demoBtn").addEventListener("click", function() {
+            const demoSection = document.getElementById("demoSection");
+            demoSection.style.display = demoSection.style.display === "none" ? "block" : "none";
+        });
+
+
+        // Calculate the total price based on selected options
+        function calculatePrice() {
+            const productValue = parseFloat(document.getElementById("product").value);
+            const optionValue = parseFloat(document.getElementById("option").value);
+            const totalPrice = productValue + optionValue;
+            document.getElementById("totalPrice").innerText = `Total Price: ${totalPrice.toFixed(2)}€`;
+        }
+    </script>
+
+</body>
+</html>
