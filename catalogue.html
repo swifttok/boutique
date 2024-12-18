@@ -153,6 +153,44 @@
         <p>SwiftTok : La clé du succès instantané sur TikTok !</p>
     </header>
     
+            <!-- Audio -->
+            <audio id="background-audio" src="audio/background.mp3" loop></audio>
+
+            <!-- Bouton Jouer/Stopper -->
+            <button id="playPauseBtn">Jouer</button>
+        
+            <!-- Barre de Volume -->
+            <label for="volumeControl">Volume :</label>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+        
+            <script>
+                const audio = document.getElementById('background-audio');
+                const playPauseBtn = document.getElementById('playPauseBtn');
+                const volumeControl = document.getElementById('volumeControl');
+        
+                // Fonction pour jouer ou arrêter le son
+                function togglePlayPause() {
+                    if (audio.paused) {
+                        audio.play();
+                        playPauseBtn.textContent = 'Stopper';
+                    } else {
+                        audio.pause();
+                        playPauseBtn.textContent = 'Jouer';
+                    }
+                }
+        
+                // Fonction pour gérer le volume
+                function updateVolume() {
+                    audio.volume = volumeControl.value;
+                }
+        
+                // Écoute de l'événement changement de la barre de volume
+                volumeControl.addEventListener('input', updateVolume);
+        
+                // Écoute de l'événement click sur le bouton
+                playPauseBtn.addEventListener('click', togglePlayPause);
+            </script>
+    
     <h4>⚠️ Notez que les quantités peuvent être inprécises de quelques unités près ⚠️</h4>
     <h2>Sélectionnez la catégorie de produit que vous souhaitez acheter :</h2>
 
@@ -189,13 +227,15 @@
         </div>
     </div>
         
-    <a href="index.html" class="btn">Retour à l'Accueil 🏠</a>
+        <a href="swift.html" class="btn">Retour à l'Accueil 🏠</a>
         
     </div>
 
     <footer>
         <p>&copy; 2024 SwiftTok - All Rights Reserved.</p>
     </footer>
+    
+    <script type="text/javascript" src="https://click123.ca/dist/js/snow.js"></script>
 
 </body>
 </html>
