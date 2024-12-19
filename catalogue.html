@@ -11,14 +11,8 @@
             color: #ffffff; /* Texte en blanc */
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: auto;
-            position: relative;
             text-align: center;
+            min-height: 100vh;
         }
 
         header {
@@ -33,9 +27,10 @@
             font-size: 36px;
         }
 
-        .container {
-            padding: 20px;
-            text-align: center;
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            color: #cccccc;
         }
 
         .btn {
@@ -61,8 +56,9 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 40px;
+            margin: 40px auto;
             gap: 20px;
+            max-width: 1200px;
         }
 
         .feature {
@@ -85,11 +81,16 @@
             margin-bottom: 10px;
         }
 
+        .feature p {
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+
         footer {
             background-color: #1e1e1e;
             text-align: center;
             padding: 20px;
-            margin-top: auto;
+            margin-top: 40px;
             width: 100%;
         }
 
@@ -99,7 +100,7 @@
         }
 
         .background-animation {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -120,27 +121,6 @@
             100% {
                 background-position: 0% 50%;
             }
-        }
-
-        .catalogue {
-            padding: 20px;
-        }
-
-        .product {
-            background-color: #1e1e1e;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(252, 50, 83, 0.3);
-        }
-
-        .product h3 {
-            color: #fc3253;
-            margin: 0 0 10px;
-        }
-
-        .product p {
-            color: #cccccc;
         }
     </style>
 </head>
@@ -207,7 +187,7 @@
         </div>
         <div class="feature">
             <h3>TikTok Likes ❤️</h3>
-            <p>Commandez un certain nombre de likes / j'aimes sur une vidéo choisie !</p>
+            <p>Commandez un certain nombre de likes sur une vidéo choisie !</p>
             <a href="likes.html" class="btn">Voir les offres</a>
         </div>
         <div class="feature">
@@ -222,20 +202,17 @@
         </div>
         <div class="feature">
             <h3>Nos Générateurs 💎</h3>
-            <p>Générez vous autant de services que vous souhaitez grâce au code source de notre générateur ! 💎</p>
+            <p>Générez autant de services que vous souhaitez grâce à notre générateur !</p>
             <a href="generator.html" class="btn">Voir les offres</a>
         </div>
     </div>
-        
-        <a href="swift.html" class="btn">Retour à l'Accueil 🏠</a>
-        
-    </div>
+    
+    <a href="index.html" class="btn">Retour à l'Accueil 🏠</a>
 
     <footer>
-        <p>&copy; 2024 SwiftTok - All Rights Reserved.</p>
+        <p>&copy; 2024 SwiftTok - Tous droits réservés.</p>
     </footer>
     
     <script type="text/javascript" src="https://click123.ca/dist/js/snow.js"></script>
-
 </body>
 </html>
