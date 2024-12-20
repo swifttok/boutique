@@ -12,19 +12,60 @@
             margin: 0;
             padding: 0;
             display: flex;
+        }
+
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #1e1e1e;
+            position: fixed;
+            display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: auto;
-            position: relative;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        
+        .sidebar h2 {
+    color: #fc3253; /* Couleur TikTok */
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            display: block;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .sidebar a:hover {
+            background-color: #fc3253;
+            border-left: 4px solid #ffffff;
+        }
+
+        .sidebar a.active {
+            background-color: #fc3253;
+            border-left: 4px solid #ffffff;
+        }
+
+        .main-content {
+            margin-left: 220px; /* Compense la largeur de la barre latérale */
+            padding: 20px;
+            width: calc(100% - 230px);
             text-align: center;
         }
 
         header {
             background-color: #1e1e1e;
             padding: 20px;
-            width: 100%;
+            width: calc(100% - 230px); /* Réduit pour s'adapter à la barre latérale */
+            margin: 0 auto;
         }
 
         header h1 {
@@ -33,9 +74,10 @@
             font-size: 36px;
         }
 
-        .container {
-            padding: 20px;
-            text-align: center;
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            color: #cccccc;
         }
 
         .btn {
@@ -61,8 +103,9 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 40px;
+            margin: 40px auto;
             gap: 20px;
+            max-width: 1200px;
         }
 
         .feature {
@@ -85,20 +128,29 @@
             margin-bottom: 10px;
         }
 
-        footer {
-            background-color: #1e1e1e;
-            text-align: center;
-            padding: 20px;
-            margin-top: auto;
-            width: 100%;
+        .feature p {
+            color: #cccccc;
+            margin-bottom: 15px;
         }
+
+        footer {
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 20px;
+    width: calc(100% - 285px); /* Réduit pour s'adapter à la barre latérale */
+    position: fixed;
+    bottom: 20px; /* Ajuste la position verticale */
+    left: 230px; /* Aligné après la barre latérale */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
 
         footer p {
             margin: 0;
             color: #cccccc;
         }
 
-        /* Fond animé avec changement de couleur permanent */
         .background-animation {
             position: absolute;
             top: 0;
@@ -122,41 +174,6 @@
                 background-position: 0% 50%;
             }
         }
-
-        .demo-form {
-            background-color: #1e1e1e;
-            padding: 30px;
-            margin-top: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            text-align: left;
-            box-shadow: 0 5px 15px rgba(252, 50, 83, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .demo-form select, .demo-form button {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            background-color: #333;
-            color: white;
-            border-radius: 5px;
-            border: none;
-            font-size: 16px;
-            box-shadow: 0 5px 10px rgba(252, 50, 83, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .demo-form select:hover, .demo-form button:hover {
-            background-color: #f64f59;
-            box-shadow: 0 10px 15px rgba(252, 50, 83, 0.5);
-        }
-
-        .demo-form h2 {
-            color: #fc3253;
-            text-align: center;
-        }
     </style>
 
 </head>
@@ -164,49 +181,26 @@
 
     <div class="background-animation"></div>
 
-    <header>
-        <h1>SwiftTok 🚀</h1>
-        <p>SwiftTok : La clé du succès instantané sur TikTok !</p>
-        <p>SwiftTok vous souhaite une bonne fin d'année 2024 et de bonnes fêtes ! 🎉</p>
-    </header>
-    
-        <!-- Audio -->
-        <audio id="background-audio" src="audio/background.mp3" loop></audio>
+    <div class="sidebar">
+        <h2>    SwiftTok 🚀</h2>
+        <a href="index.html" class="active">Accueil 🏠</a>
+        <a href="catalogue.html">Catalogue 📦</a>
+        <a href="views.html">Les Vues 👀</a>
+        <a href="likes.html">Les Likes ❤️</a>
+        <a href="favs.html">Les Favoris 🔖</a>
+        <a href="favs.html">Les Partages 📲</a>
+        <a href="followers.html">Les Followers ⭐</a>
+        <a href="generator.html">Générateurs 💎</a>
+        <a href="https://discord.gg/43fHNDUk8U">Notre Discord 🎯</a>
+    </div>
 
-        <!-- Bouton Jouer/Stopper -->
-        <button id="playPauseBtn">Jouer</button>
-    
-        <!-- Barre de Volume -->
-        <label for="volumeControl">Volume :</label>
-        <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
-    
-        <script>
-            const audio = document.getElementById('background-audio');
-            const playPauseBtn = document.getElementById('playPauseBtn');
-            const volumeControl = document.getElementById('volumeControl');
-    
-            // Fonction pour jouer ou arrêter le son
-            function togglePlayPause() {
-                if (audio.paused) {
-                    audio.play();
-                    playPauseBtn.textContent = 'Stopper';
-                } else {
-                    audio.pause();
-                    playPauseBtn.textContent = 'Jouer';
-                }
-            }
-    
-            // Fonction pour gérer le volume
-            function updateVolume() {
-                audio.volume = volumeControl.value;
-            }
-    
-            // Écoute de l'événement changement de la barre de volume
-            volumeControl.addEventListener('input', updateVolume);
-    
-            // Écoute de l'événement click sur le bouton
-            playPauseBtn.addEventListener('click', togglePlayPause);
-        </script>
+    <div class="main-content">
+        <header>
+            <h1>SwiftTok 🚀</h1>
+            <p>La clé du succès instantané sur TikTok !</p>
+            <p>SwiftTok vous souhaite une bonne fin d'année 2024 et de bonnes fêtes ! 🎉</p>
+        </header>
+
 
     <div class="container">
         <a href="catalogue.html" class="btn" id="demoBtn">Notre Catalogue 📦</a>
@@ -259,8 +253,12 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 SwiftTok - All Rights Reserved.</p>
+        <p>&copy; 2024 SwiftTok - Tous droits réservés.</p>
     </footer>
+    
+    <script type="text/javascript" src="https://click123.ca/dist/js/snow.js"></script>
+</body>
+</html>
     
     
 
@@ -288,8 +286,6 @@
             document.getElementById("totalPrice").innerText = `Total Price: ${totalPrice.toFixed(2)}€`;
         }
     </script>
-
-<script type="text/javascript" src="https://click123.ca/dist/js/snow.js"></script>
 
 </body>
 </html>
