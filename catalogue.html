@@ -11,14 +11,61 @@
             color: #ffffff; /* Texte en blanc */
             margin: 0;
             padding: 0;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #1e1e1e;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        
+        .sidebar h2 {
+    color: #fc3253; /* Couleur TikTok */
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            display: block;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .sidebar a:hover {
+            background-color: #fc3253;
+            border-left: 4px solid #ffffff;
+        }
+
+        .sidebar a.active {
+            background-color: #fc3253;
+            border-left: 4px solid #ffffff;
+        }
+
+        .main-content {
+            margin-left: 220px; /* Compense la largeur de la barre latérale */
+            padding: 20px;
+            width: calc(100% - 230px);
             text-align: center;
-            min-height: 100vh;
         }
 
         header {
             background-color: #1e1e1e;
             padding: 20px;
-            width: 100%;
+            width: calc(100% - 230px); /* Réduit pour s'adapter à la barre latérale */
+            margin: 0 auto;
         }
 
         header h1 {
@@ -90,8 +137,11 @@
             background-color: #1e1e1e;
             text-align: center;
             padding: 20px;
-            margin-top: 40px;
-            width: 100%;
+            width: calc(100% - 285px); /* Réduit pour s'adapter à la barre latérale */
+            margin: 0 auto;
+            position: fixed;
+            left: 230px; /* Aligné après la barre latérale */
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
         }
 
         footer p {
@@ -128,49 +178,26 @@
 
     <div class="background-animation"></div>
 
-    <header>
-        <h1>SwiftTok - Notre Catalogue 📦</h1>
-        <p>SwiftTok : La clé du succès instantané sur TikTok !</p>
-        <p>SwiftTok vous souhaite une bonne fin d'année 2024 et de bonnes fêtes ! 🎉</p>
-    </header>
-    
-            <!-- Audio -->
-            <audio id="background-audio" src="audio/background.mp3" loop></audio>
+    <div class="sidebar">
+        <h2>    SwiftTok 🚀</h2>
+        <a href="index.html" class="active">Accueil 🏠</a>
+        <a href="catalogue.html">Catalogue 📦</a>
+        <a href="views.html">Les Vues 👀</a>
+        <a href="likes.html">Les Likes ❤️</a>
+        <a href="favs.html">Les Favoris 🔖</a>
+        <a href="favs.html">Les Partages 📲</a>
+        <a href="followers.html">Les Followers ⭐</a>
+        <a href="generator.html">Générateurs 💎</a>
+        <a href="https://discord.gg/43fHNDUk8U">Notre Discord 🎯</a>
+    </div>
 
-            <!-- Bouton Jouer/Stopper -->
-            <button id="playPauseBtn">Jouer</button>
-        
-            <!-- Barre de Volume -->
-            <label for="volumeControl">Volume :</label>
-            <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
-        
-            <script>
-                const audio = document.getElementById('background-audio');
-                const playPauseBtn = document.getElementById('playPauseBtn');
-                const volumeControl = document.getElementById('volumeControl');
-        
-                // Fonction pour jouer ou arrêter le son
-                function togglePlayPause() {
-                    if (audio.paused) {
-                        audio.play();
-                        playPauseBtn.textContent = 'Stopper';
-                    } else {
-                        audio.pause();
-                        playPauseBtn.textContent = 'Jouer';
-                    }
-                }
-        
-                // Fonction pour gérer le volume
-                function updateVolume() {
-                    audio.volume = volumeControl.value;
-                }
-        
-                // Écoute de l'événement changement de la barre de volume
-                volumeControl.addEventListener('input', updateVolume);
-        
-                // Écoute de l'événement click sur le bouton
-                playPauseBtn.addEventListener('click', togglePlayPause);
-            </script>
+    <div class="main-content">
+            <header>
+                <h1>SwiftTok - Notre Catalogue 📦</h1>
+                <p>La clé du succès instantané sur TikTok !</p>
+                <p>SwiftTok vous souhaite une bonne fin d'année 2024 et de bonnes fêtes ! 🎉</p>
+            </header>
+    
     
     <h4>⚠️ Notez que les quantités peuvent être inprécises de quelques unités près ⚠️</h4>
     <h2>Sélectionnez la catégorie de produit que vous souhaitez acheter :</h2>
